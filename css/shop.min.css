@@ -1124,6 +1124,11 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .footer_main-about_brand svg {
   margin-right: 10px;
 }
+.footer_main-about_span {
+  color: white;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
 .footer_main-about_wrapper .text {
   margin: 5px 0 20px;
 }

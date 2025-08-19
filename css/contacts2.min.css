@@ -762,12 +762,6 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   height: 475px;
   width: 100%;
 }
-.contacts_info-item {
-  margin-bottom: 30px;
-}
-.contacts_info-item:last-of-type {
-  margin-bottom: 0;
-}
 .contacts_info-item_icon {
   width: 100px;
   height: 100px;
@@ -812,6 +806,11 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 }
 .footer_main-about_brand svg {
   margin-right: 10px;
+}
+.footer_main-about_span {
+  color: white;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 .footer_main-about_wrapper .text {
   margin: 5px 0 20px;

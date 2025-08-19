@@ -821,6 +821,14 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .about_main-content_header {
   margin-bottom: 15px;
 }
+.about_main-content_text {
+  color: #214842;
+  font-size: 21px;
+  font-weight: 600;
+}
+span {
+  font-weight: 800;
+}
 .about_main-media {
   border-radius: 16px;
   overflow: hidden;
@@ -840,13 +848,12 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .about_numbers-group .number {
   font-family: NunitoSans, sans-serif;
   font-weight: 900;
-  font-size: 36px;
-  height: 36px;
+  font-size: 50px !important;
   margin-bottom: 5px;
 }
 .about_numbers-group .number-label {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 17px;
   text-align: center;
 }
 @media screen and (min-width: 575.98px) {
@@ -1353,13 +1360,15 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   background: rgba(239, 195, 104, 0.1);
 }
 .guide_main-header {
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .guide_main-header_title {
-  margin-bottom: 15px;
 }
-.guide_main-list_item {
-  margin-bottom: 20px;
+.guide_main-header_text {
+  width: 100%;
+  max-width: 550px;
 }
 .guide_main-list_item:last-of-type {
   margin-bottom: 0;
@@ -1717,6 +1726,11 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .footer_main-about_brand svg {
   margin-right: 10px;
 }
+.footer_main-about_span {
+  color: white;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
 .footer_main-about_wrapper .text {
   margin: 5px 0 20px;
 }
@@ -1744,6 +1758,10 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .footer_main-contacts_list .list-item {
   margin-bottom: 15px;
 }
+.footer_main-contacts_list .list-item .wrapper span {
+  font-weight: normal;
+}
+
 .footer_main-contacts_list .list-item:last-of-type {
   margin-bottom: 0;
 }
