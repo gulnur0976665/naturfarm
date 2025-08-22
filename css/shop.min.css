@@ -502,6 +502,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 }
 .header_logo span:not(.logo) {
   display: none;
+  color: #378e3c;
 }
 .header_nav {
   width: 100%;
@@ -518,6 +519,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   left: 0;
   right: 0;
   background: #fff;
+  margin-top: 10px;
 }
 
 .header_nav.active {
@@ -581,6 +583,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   -o-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
 }
+
 @media screen and (min-width: 767.98px) {
   .header_logo span:not(.logo) {
     display: inline;
@@ -740,6 +743,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
     visibility: visible;
   }
 }
+
 @media screen and (min-width: 767.98px) {
   .header_logo span:not(.logo) {
     display: inline;
@@ -902,9 +906,11 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 /* page */
 .page_main {
   padding: 60px 0;
-  background: url(../img/placeholder.jpg) center/cover no-repeat;
+  background: linear-gradient(rgba(33, 72, 66, 0.333), rgba(33, 72, 66, 0.507)),
+    url(../img/main-logo21.jpg) center/cover no-repeat;
   text-align: center;
   margin-bottom: 30px;
+  color: #fff;
 }
 .page_header {
   margin-bottom: 15px;
@@ -912,6 +918,8 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .page_text {
   max-width: 500px;
   margin: 0 auto;
+  color: white;
+  font-weight: 600;
 }
 .page_breadcrumbs {
   position: relative;
@@ -954,40 +962,30 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   order: 3;
 }
 .shop_products-list_item {
-  margin-bottom: 30px;
 }
 .shop_products-list_item:last-of-type {
-  margin-bottom: 0;
 }
 .shop_products-list_item .wrapper .media {
   position: relative;
-  border-radius: 16px;
-  overflow: hidden;
+  border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 10px;
-  height: 350px;
+  height: 340px;
 }
 .shop_products-list_item .wrapper .media img {
-  height: 100%;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .shop_products-list_item .wrapper .media:hover .overlay {
   opacity: 1;
   visibility: visible;
+  height: 340px;
+  border-radius: 10px;
 }
 .shop_products-list_item .wrapper .media .overlay,
 .shop_products-list_item .wrapper .media .sale {
   position: absolute;
-}
-.shop_products-list_item .wrapper .media .sale {
-  width: 40px;
-  height: 40px;
-  background: #258f67;
-  border-radius: 50%;
-  top: 20px;
-  right: 20px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
 }
 .shop_products-list_item .wrapper .media .overlay {
   background: rgba(33, 72, 66, 0.6);
@@ -998,12 +996,13 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   transition: 0.3s ease-in-out;
   opacity: 0;
   visibility: hidden;
+  height: 340px;
+  border-radius: 10px;
 }
 .shop_products-list_item .wrapper .main {
   flex-grow: 1;
 }
 .shop_products-list_item .wrapper .main_title {
-  margin: 10px 0;
   flex-grow: 1;
   font-family: NunitoSans, sans-serif;
   color: #214842;
@@ -1038,13 +1037,8 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   .shop_products-list_item {
     padding: 0 15px;
   }
-
-  .shop_products-list_item .wrapper {
-    height: 100%;
-  }
-
   .shop_products-list_item .wrapper .media {
-    height: 260px;
+    height: 310px;
   }
 }
 @media screen and (min-width: 767.98px) {

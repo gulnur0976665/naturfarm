@@ -29,7 +29,7 @@
         >
           <span class="logo">
             <img
-              src="img/home-logo-removebg-preview.png"
+              src="img/header1.png"
               alt=""
               style="width: 50px; height: auto"
             />
@@ -38,7 +38,9 @@
         </a>
         <nav class="header_nav">
           <a class="nav-link" href="index.html"> Главная </a>
-          <a class="nav-link" href="shop.html"> Каталог </a>
+          <a style="color: #258f67" class="nav-link" href="shop.html">
+            Каталог
+          </a>
           <a class="nav-link" href="about.html"> О нас </a>
           <a class="nav-link" href="contacts2.html"> Контакты </a>
         </nav>
@@ -65,11 +67,14 @@
       <div class="container">
         <ul class="page_breadcrumbs d-flex flex-wrap">
           <li class="page_breadcrumbs-item">
-            <a class="link" href="index.html">Home</a>
+            <a class="link" href="index.html">Главная</a>
           </li>
 
-          <li class="page_breadcrumbs-item current">
-            <span>Shop</span>
+          <li
+            style="color: gray; font-weight: 800; font-family: sans-serif"
+            class="page_breadcrumbs-item current"
+          >
+            <span>Каталог</span>
           </li>
         </ul>
       </div>
@@ -80,32 +85,31 @@
         <div class="container">
           <ul class="shop_products-list d-sm-flex flex-wrap row">
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=1';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="1"
             >
               <div class="wrapper d-flex flex-column">
                 <div class="media position-relative">
+                  <div
+                    class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
+                  ></div>
                   <picture>
-                    <source srcset="img/img11.webp" type="image/webp" />
+                    <source srcset="img/img1.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img11.webp"
+                      src="img/img1.jpg"
                       alt="Pre-Rolled Joint"
                     />
                   </picture>
                 </div>
                 <div class="main d-flex flex-column mt-2">
-                  <span class="main_title">Pre-Rolled Joint</span>
-                  <div class="main_price">
-                    <span class="price">$7.97</span>
-                  </div>
+                  <span class="main_title">Янтарная кислота</span>
                 </div>
               </div>
             </li>
-
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=2';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="2"
             >
@@ -115,10 +119,10 @@
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img02.webp" type="image/webp" />
+                    <source srcset="img/img2.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img02.webp"
+                      src="img/img2.jpg"
                       alt="Lemon Skunk"
                     />
                   </picture>
@@ -129,33 +133,26 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Tangerine Dream</a
+                    >Фолиевая кислота</a
                   >
-                  <div class="main_price">
-                    <span class="price price--new">$7.97</span>
-                  </div>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=3';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="3"
             >
               <div class="wrapper d-flex flex-column">
                 <div class="media position-relative">
-                  <span
-                    class="sale d-flex align-items-center justify-content-center position-absolute top-0 start-0"
-                    >-10%</span
-                  >
                   <div
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img03.webp" type="image/webp" />
+                    <source srcset="img/img3.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img03.webp"
+                      src="img/img3.jpg"
                       alt="Orange Haze"
                     />
                   </picture>
@@ -166,17 +163,13 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Lemon Skunk</a
-                  >
-                  <div class="main_price">
-                    <span class="price price--old">$10.97</span>
-                    <span class="price price--new">$6.97</span>
-                  </div>
+                    >Пиколинат хрома
+                  </a>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=4';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="4"
             >
@@ -186,10 +179,10 @@
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img1.webp" type="image/webp" />
+                    <source srcset="img/img4.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img1.webp"
+                      src="img/img4.jpg"
                       alt="Blue Dream"
                     />
                   </picture>
@@ -200,33 +193,26 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Pack Gummies 150mg</a
+                    >Куркума + имбирь</a
                   >
-                  <div class="main_price">
-                    <span class="price">$7.97</span>
-                  </div>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=5';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="1"
             >
               <div class="wrapper d-flex flex-column">
                 <div class="media position-relative">
-                  <span
-                    class="sale d-flex align-items-center justify-content-center position-absolute top-0 start-0"
-                    >-10%</span
-                  >
                   <div
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img05.webp" type="image/webp" />
+                    <source srcset="img/img5.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img05.webp"
+                      src="img/img5.jpg"
                       alt="Pre-Rolled Joint"
                     />
                   </picture>
@@ -237,17 +223,13 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Potluck Chocolates</a
+                    >Глюкозамин максимум</a
                   >
-                  <div class="main_price">
-                    <span class="price price--old">$10.97</span>
-                    <span class="price price--new">$6.97</span>
-                  </div>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=6';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="2"
             >
@@ -257,10 +239,10 @@
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img06.webp" type="image/webp" />
+                    <source srcset="img/img6.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img06.webp"
+                      src="img/img6.jpg"
                       alt="Lemon Skunk"
                     />
                   </picture>
@@ -271,16 +253,13 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Diamond Concentrates</a
+                    >Глутаминовая кислота</a
                   >
-                  <div class="main_price">
-                    <span class="price price--new">$7.97</span>
-                  </div>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=7';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="3"
             >
@@ -290,10 +269,10 @@
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img07.webp" type="image/webp" />
+                    <source srcset="img/img7.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img07.webp"
+                      src="img/img7.jpg"
                       alt="Orange Haze"
                     />
                   </picture>
@@ -304,33 +283,26 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Witchcraft Cannabis</a
+                    >Глюкозамин Хондрокомплекс</a
                   >
-                  <div class="main_price">
-                    <span class="price">$7.97</span>
-                  </div>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=8';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="4"
             >
               <div class="wrapper d-flex flex-column">
                 <div class="media position-relative">
-                  <span
-                    class="sale d-flex align-items-center justify-content-center position-absolute top-0 start-0"
-                    >-10%</span
-                  >
                   <div
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img08.webp" type="image/webp" />
+                    <source srcset="img/img8.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img08.webp"
+                      src="img/img8.jpg"
                       alt="Blue Dream"
                     />
                   </picture>
@@ -341,34 +313,26 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >House Terp Sauce – 1 Gram</a
+                    >Остеонорм</a
                   >
-                  <div class="main_price">
-                    <span class="price price--old">$10.97</span>
-                    <span class="price price--new">$6.97</span>
-                  </div>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=9';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="1"
             >
               <div class="wrapper d-flex flex-column">
                 <div class="media position-relative">
-                  <span
-                    class="sale d-flex align-items-center justify-content-center position-absolute top-0 start-0"
-                    >-10%</span
-                  >
                   <div
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
                   <picture>
-                    <source srcset="img/img09.webp" type="image/webp" />
+                    <source srcset="img/img9.jpg" type="image/webp" />
                     <img
                       class="lazy img-fluid"
-                      src="img/img09.webp"
+                      src="img/img9.jpg"
                       alt="Pre-Rolled Joint"
                     />
                   </picture>
@@ -379,33 +343,26 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Chem Dawg</a
+                    >Витамин D3 2000</a
                   >
-                  <div class="main_price">
-                    <span class="price price--old">$10.97</span>
-                    <span class="price price--new">$6.97</span>
-                  </div>
                 </div>
               </div>
             </li>
             <li
-              onclick="window.location.href='product.html';"
+              onclick="window.location.href='product.html?id=10';"
               class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
               data-order="2"
             >
               <div class="wrapper d-flex flex-column">
-                <div class="media position-relative">
+                <div class="media">
                   <div
                     class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
                   ></div>
-                  <picture>
-                    <source srcset="img/img10.webp" type="image/webp" />
-                    <img
-                      class="lazy img-fluid"
-                      src="img/img10.webp"
-                      alt="Lemon Skunk"
-                    />
-                  </picture>
+                  <img
+                    class="lazy img-fluid"
+                    src="img/img10.jpg"
+                    alt="Lemon Skunk"
+                  />
                 </div>
                 <div class="main d-flex flex-column mt-2">
                   <a
@@ -413,224 +370,8 @@
                     href="product.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Ice Wreck</a
+                    >Джимейт Лайф</a
                   >
-                  <div class="main_price">
-                    <span class="price price--new">$7.97</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              onclick="window.location.href='product.html';"
-              class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
-              data-order="3"
-            >
-              <div class="wrapper d-flex flex-column">
-                <div class="media position-relative">
-                  <span
-                    class="sale d-flex align-items-center justify-content-center position-absolute top-0 start-0"
-                    >-15%</span
-                  >
-                  <div
-                    class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
-                  ></div>
-                  <picture>
-                    <source srcset="img/img011.webp" type="image/webp" />
-                    <img
-                      class="lazy img-fluid"
-                      src="img/img011.webp"
-                      alt="Orange Haze"
-                    />
-                  </picture>
-                </div>
-                <div class="main d-flex flex-column mt-2">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Full Spectrum THC: Natural</a
-                  >
-                  <div class="main_price">
-                    <span class="price price--old">$10.97</span>
-                    <span class="price price--new">$6.97</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              onclick="window.location.href='product.html';"
-              class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
-              data-order="4"
-            >
-              <div class="wrapper d-flex flex-column">
-                <div class="media position-relative">
-                  <div
-                    class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
-                  ></div>
-                  <picture>
-                    <source srcset="img/img12.webp" type="image/webp" />
-                    <img
-                      class="lazy img-fluid"
-                      src="img/img12.webp"
-                      alt="Blue Dream"
-                    />
-                  </picture>
-                </div>
-                <div class="main d-flex flex-column mt-2">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Pink Diablo</a
-                  >
-                  <div class="main_price">
-                    <span class="price">$7.97</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              onclick="window.location.href='product.html';"
-              class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
-              data-order="2"
-            >
-              <div class="wrapper d-flex flex-column">
-                <div class="media position-relative">
-                  <div
-                    class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
-                  ></div>
-                  <picture>
-                    <source srcset="img/img10.webp" type="image/webp" />
-                    <img
-                      class="lazy img-fluid"
-                      src="img/img10.webp"
-                      alt="Lemon Skunk"
-                    />
-                  </picture>
-                </div>
-                <div class="main d-flex flex-column mt-2">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Ice Wreck</a
-                  >
-                  <div class="main_price">
-                    <span class="price price--new">$7.97</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              onclick="window.location.href='product.html';"
-              class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
-              data-order="3"
-            >
-              <div class="wrapper d-flex flex-column">
-                <div class="media position-relative">
-                  <span
-                    class="sale d-flex align-items-center justify-content-center position-absolute top-0 start-0"
-                    >-15%</span
-                  >
-                  <div
-                    class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
-                  ></div>
-                  <picture>
-                    <source srcset="img/img011.webp" type="image/webp" />
-                    <img
-                      class="lazy img-fluid"
-                      src="img/img15.webp"
-                      alt="Orange Haze"
-                    />
-                  </picture>
-                </div>
-                <div class="main d-flex flex-column mt-2">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Full Spectrum THC: Natural</a
-                  >
-                  <div class="main_price">
-                    <span class="price price--old">$10.97</span>
-                    <span class="price price--new">$6.97</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              onclick="window.location.href='product.html';"
-              class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
-              data-order="4"
-            >
-              <div class="wrapper d-flex flex-column">
-                <div class="media position-relative">
-                  <div
-                    class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
-                  ></div>
-                  <picture>
-                    <source srcset="img/img12.webp" type="image/webp" />
-                    <img
-                      class="lazy img-fluid"
-                      src="img/img12.webp"
-                      alt="Blue Dream"
-                    />
-                  </picture>
-                </div>
-                <div class="main d-flex flex-column mt-2">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Pink Diablo</a
-                  >
-                  <div class="main_price">
-                    <span class="price">$7.97</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              onclick="window.location.href='product.html';"
-              class="shop_products-list_item col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
-              data-order="4"
-            >
-              <div class="wrapper d-flex flex-column">
-                <div class="media position-relative">
-                  <span
-                    class="sale d-flex align-items-center justify-content-center position-absolute top-0 start-0"
-                    >-10%</span
-                  >
-                  <div
-                    class="overlay d-flex align-items-center justify-content-center position-absolute w-100 h-100 top-0 start-0"
-                  ></div>
-                  <picture>
-                    <source srcset="img/img08.webp" type="image/webp" />
-                    <img
-                      class="lazy img-fluid"
-                      src="img/img08.webp"
-                      alt="Blue Dream"
-                    />
-                  </picture>
-                </div>
-                <div class="main d-flex flex-column mt-2">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >House Terp Sauce – 1 Gram</a
-                  >
-                  <div class="main_price">
-                    <span class="price price--old">$10.97</span>
-                    <span class="price price--new">$6.97</span>
-                  </div>
                 </div>
               </div>
             </li>
@@ -652,7 +393,7 @@
             >
               <span class="logo">
                 <img
-                  src="img/home-logo-removebg-preview.png"
+                  src="img/header1.png"
                   alt=""
                   style="width: 50px; height: auto"
                 />
@@ -688,7 +429,7 @@
             class="footer_main-contacts footer_main-block col-md-6 col-xl-auto"
           >
             <h4 class="footer_main-contacts_header footer_main-header">
-              Contacts information
+              Контактная информация
             </h4>
             <ul class="footer_main-contacts_list">
               <li class="list-item d-flex align-items-center">
@@ -729,8 +470,8 @@
                   <i class="icon-clock"></i>
                 </span>
                 <div class="wrapper d-flex flex-column">
-                  <span>9:00 am to 5:00 pm</span>
-                  <span>Monday to Friday</span>
+                  <span>с 9:00 до 17:00</span>
+                  <span>с понедельника по пятницу</span>
                 </div>
               </li>
             </ul>
@@ -739,7 +480,7 @@
             class="footer_main-instagram footer_main-block col-md-6 col-xl-auto"
           >
             <h4 class="footer_main-instagram_header footer_main-header">
-              Instagram
+              Инстаграм
             </h4>
             <ul class="footer_main-instagram_list d-grid">
               <li class="list-item">
@@ -751,14 +492,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img1.jpg"
+                      srcset="img/img1.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img1.jpg"
+                      src="img/img1.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -773,14 +514,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img2.jpg"
+                      srcset="img/img2.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img2.jpg"
+                      src="img/img2.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -795,14 +536,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img3.jpg"
+                      srcset="img/img3.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img3.jpg"
+                      src="img/img3.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -817,14 +558,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img4.jpg"
+                      srcset="img/img4.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img4.jpg"
+                      src="img/img4.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -839,14 +580,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img5.jpg"
+                      srcset="img/img5.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img5.jpg"
+                      src="img/img5.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -861,14 +602,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img6.jpg"
+                      srcset="img/img6.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img6.jpg"
+                      src="img/img6.jpg"
                       alt="instagram post"
                     />
                   </picture>

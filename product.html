@@ -13,6 +13,52 @@
     <link rel="stylesheet preload" as="style" href="css/libs.min.css" />
 
     <link rel="stylesheet" href="css/product.min.css" />
+
+    <script type="module">
+      import products from "./products.js";
+
+      const params = new URLSearchParams(window.location.search);
+      const id = Number(params.get("id"));
+      const product = products.find((p) => p.id === id);
+
+      if (product) {
+        document.getElementById("product-title").textContent = product.title;
+        document.getElementById("product-description").textContent =
+          product.description;
+        document.getElementById(
+          "product-price"
+        ).textContent = `$${product.price}`;
+        document.getElementById("product-category").textContent =
+          product.category;
+        document.getElementById("product-size").textContent = product.size;
+        document.getElementById("product-plant").textContent =
+          product.plantType;
+        document.getElementById("product-thc").textContent = product.thc;
+        document.getElementById("product-cbd").textContent = product.cbd;
+        document.getElementById("product-effects").textContent =
+          product.effects;
+        document.getElementById("product-tags").textContent = product.tags;
+        document.getElementById("product-sku").textContent = product.sku;
+
+        const imagesWrapper = document.getElementById("product-images");
+        const thumbsWrapper = document.getElementById("product-thumbs");
+
+        product.images.forEach((img) => {
+          const slide = document.createElement("div");
+          slide.classList.add("swiper-slide");
+          slide.innerHTML = `<img src="${img}" alt="${product.title}"/>`;
+          imagesWrapper.appendChild(slide);
+
+          const thumb = document.createElement("div");
+          thumb.classList.add("swiper-slide");
+          thumb.innerHTML = `<img src="${img}" alt="${product.title}"/>`;
+          thumbsWrapper.appendChild(thumb);
+        });
+      } else {
+        document.getElementById("product-title").textContent =
+          "Продукт табылган жок!";
+      }
+    </script>
   </head>
   <body>
     <header
@@ -29,7 +75,7 @@
         >
           <span class="logo">
             <img
-              src="img/home-logo-removebg-preview.png"
+              src="img/header1.png"
               alt=""
               style="width: 50px; height: auto"
             />
@@ -42,6 +88,14 @@
           <a class="nav-link" href="about.html"> О нас </a>
           <a class="nav-link" href="contacts2.html"> Контакты </a>
         </nav>
+        <span
+          class="header_trigger d-inline-flex d-xl-none flex-column justify-content-between"
+        >
+          <span class="line line--short"></span>
+          <span class="line line"></span>
+          <span class="line line--short"></span>
+          <span class="line line"></span>
+        </span>
       </div>
     </header>
     <header class="page">
@@ -57,11 +111,14 @@
       <div class="container">
         <ul class="page_breadcrumbs d-flex flex-wrap">
           <li class="page_breadcrumbs-item">
-            <a class="link" href="index.html">Home</a>
+            <a class="link" href="index.html">Главная</a>
           </li>
 
-          <li class="page_breadcrumbs-item current">
-            <span>Single Product</span>
+          <li
+            style="color: gray; font-weight: 800; font-family: sans-serif"
+            class="page_breadcrumbs-item current"
+          >
+            <span>Продукт</span>
           </li>
         </ul>
       </div>
@@ -74,761 +131,26 @@
           <div class="about_main d-lg-flex flex-nowrap">
             <div class="about_main-slider">
               <div class="about_main-slider--single" data-modal="false">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="img/placeholder.jpg" data-role="gallery">
-                      <picture>
-                        <source
-                          data-srcset="img/placeholder.jpg"
-                          srcset="img/placeholder.jpg"
-                          type="image/webp"
-                        />
-                        <img
-                          class="lazy"
-                          data-src="img/placeholder.jpg"
-                          src="img/placeholder.jpg"
-                          alt="media"
-                        />
-                      </picture>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="img/placeholder.jpg" data-role="gallery">
-                      <picture>
-                        <source
-                          data-srcset="img/placeholder.jpg"
-                          srcset="img/placeholder.jpg"
-                          type="image/webp"
-                        />
-                        <img
-                          class="lazy"
-                          data-src="img/placeholder.jpg"
-                          src="img/placeholder.jpg"
-                          alt="media"
-                        />
-                      </picture>
-                    </a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="img/placeholder.jpg" data-role="gallery">
-                      <picture>
-                        <source
-                          data-srcset="img/placeholder.jpg"
-                          srcset="img/placeholder.jpg"
-                          type="image/webp"
-                        />
-                        <img
-                          class="lazy"
-                          data-src="img/placeholder.jpg"
-                          src="img/placeholder.jpg"
-                          alt="media"
-                        />
-                      </picture>
-                    </a>
-                  </div>
-                </div>
-                <div
-                  class="swiper-controls d-flex align-items-center justify-content-between"
-                >
-                  <a
-                    class="swiper-button-prev d-inline-flex align-items-center justify-content-center"
-                    href="#"
-                  >
-                    <i class="icon-caret_left icon"></i>
-                  </a>
-                  <a
-                    class="swiper-button-next d-inline-flex align-items-center justify-content-center"
-                    href="#"
-                  >
-                    <i class="icon-caret_right icon"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="about_main-slider--thumbs">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <picture>
-                      <source
-                        data-srcset="img/placeholder.jpg"
-                        srcset="img/placeholder.jpg"
-                        type="image/webp"
-                      />
-                      <img
-                        class="lazy"
-                        data-src="img/placeholder.jpg"
-                        src="img/placeholder.jpg"
-                        alt="media"
-                      />
-                    </picture>
-                  </div>
-                  <div class="swiper-slide">
-                    <picture>
-                      <source
-                        data-srcset="img/placeholder.jpg"
-                        srcset="img/placeholder.jpg"
-                        type="image/webp"
-                      />
-                      <img
-                        class="lazy"
-                        data-src="img/placeholder.jpg"
-                        src="img/placeholder.jpg"
-                        alt="media"
-                      />
-                    </picture>
-                  </div>
-                  <div class="swiper-slide">
-                    <picture>
-                      <source
-                        data-srcset="img/placeholder.jpg"
-                        srcset="img/placeholder.jpg"
-                        type="image/webp"
-                      />
-                      <img
-                        class="lazy"
-                        data-src="img/placeholder.jpg"
-                        src="img/placeholder.jpg"
-                        alt="media"
-                      />
-                    </picture>
-                  </div>
+                <div class="swiper-wrapper" id="product-images">
+                  <img id="product-images" src="" alt="" />
                 </div>
               </div>
             </div>
+
             <div class="about_main-info">
               <div
                 class="about_main-info_product d-sm-flex align-items-center justify-content-between"
               >
-                <h2 class="title">Pure Sun CBD Oil 30 ml</h2>
+                <h2 class="title" id="product-title"></h2>
               </div>
-              <p class="about_main-info_description">
-                Elementum eu facilisis sed odio morbi quis commodo odio. Mauris
-                rhoncus aenean vel elit scelerisque mauris pellentesque. Arcu
-                felis bibendum ut tristique et egestas. Id semper risus in
-                hendrerit gravida rutrum. Eu mi bibendum neque egestas congue
-              </p>
-              <span class="about_main-info_price">$14.89</span>
-              <div class="about_main-info_buy d-flex align-items-center"></div>
-              <ul class="about_main-info_list">
-                <li class="list-item">
-                  <span class="property">Category:</span>
-                  <span class="value">Oil</span>
-                </li>
-                <li class="list-item">
-                  <span class="property">Size:</span>
-                  <span class="value">30ml</span>
-                </li>
-                <li class="list-item">
-                  <span class="property">Plant Type:</span>
-                  <span class="value">Sativa Dominant</span>
-                </li>
-                <li class="list-item">
-                  <span class="property">THC:</span>
-                  <span class="value">10.3mg/g</span>
-                </li>
-                <li class="list-item">
-                  <span class="property">CBD:</span>
-                  <span class="value">0.33%</span>
-                </li>
-                <li class="list-item">
-                  <span class="property">Effects:</span>
-                  <span class="value">Calm, Happy, Relaxed</span>
-                </li>
-                <li class="list-item">
-                  <span class="property">Tags:</span>
-                  <span class="value">Cannabis, oil</span>
-                </li>
-                <li class="list-item">
-                  <span class="property">SKU:</span>
-                  <span class="value">1234567</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- Product additional information -->
-          <div class="about_secondary">
-            <div class="about_secondary-content">
-              <ul
-                class="about_secondary-content_nav nav nav-tabs"
-                role="tablist"
-              >
-                <li class="nav-item" role="presentation">
-                  <div
-                    class="nav-link active"
-                    id="description-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#description"
-                    role="tab"
-                    aria-selected="true"
-                  >
-                    Description
-                  </div>
-                </li>
-              </ul>
-              <div
-                class="about_secondary-content_tabs tab-content"
-                id="productTabs"
-              >
-                <div class="wrapper">
-                  <h4
-                    class="accordion_component-item_header d-flex justify-content-between align-items-center"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#description"
-                    aria-expanded="true"
-                  >
-                    Description
-                    <i class="icon-caret_down transform icon"></i>
-                  </h4>
-                  <div
-                    class="tab-pane collapse show active"
-                    id="description"
-                    role="tabpanel"
-                    aria-labelledby="description-tab"
-                    data-bs-parent="#productTabs"
-                  >
-                    <p class="text">
-                      Elementum eu facilisis sed odio morbi quis commodo odio.
-                      Mauris rhoncus aenean vel elit scelerisque mauris
-                      pellentesque. Arcu felis bibendum ut tristique et egestas.
-                      Id semper risus in hendrerit gravida rutrum. Eu mi
-                      bibendum neque egestas congue.
-                    </p>
-                    <p class="text">
-                      Dignissim enim sit amet venenatis. At tellus at urna
-                      condimentum mattis pellentesque id nibh. Sollicitudin ac
-                      orci phasellus egestas tellus rutrum. Eget mi proin sed
-                      libero enim sed. Quisque non tellus orci ac auctor augue
-                      mauris. Sit amet luctus venenatis lectus magna fringilla.
-                    </p>
-                  </div>
-                </div>
-                <div class="wrapper">
-                  <h4
-                    class="accordion_component-item_header d-flex justify-content-between align-items-center"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#reviews"
-                  >
-                    <span class="wrapper">
-                      Reviews (<span id="reviewsCountResponsive">2</span>)
-                    </span>
-                    <i class="icon-caret_down icon"></i>
-                  </h4>
-                  <div
-                    class="tab-pane collapse"
-                    id="reviews"
-                    role="tabpanel"
-                    aria-labelledby="reviews-tab"
-                    data-bs-parent="#productTabs"
-                  >
-                    <div class="reviews-section">
-                      <ul class="reviews-section_list">
-                        <li class="review">
-                          <div class="review_header d-sm-flex flex-wrap">
-                            <span class="name">Dawn Fowler</span>
-                            <div class="rating d-flex">
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star star"></i>
-                            </div>
-                            <span class="timestamp"
-                              >September 30, 2021 at 9:52 am</span
-                            >
-                          </div>
-                          <p class="review_main">
-                            Convallis posuere morbi leo urna molestie at
-                            elementum. Quis auctor elit sed vulputate mi. In
-                            nulla posuere sollicitudin aliquam ultrices.
-                          </p>
-                          <div class="review_secondary d-lg-flex">
-                            <div class="review_secondary-block">
-                              <span class="review_secondary-block_header"
-                                >Benefits:</span
-                              >
-                              <p class="review_secondary-block_text">
-                                In nulla posuere sollicitudin aliquam ultrices.
-                              </p>
-                            </div>
-                            <div class="review_secondary-block">
-                              <span class="review_secondary-block_header"
-                                >Disadvantages:</span
-                              >
-                              <p class="review_secondary-block_text">
-                                Viverra aliquet eget sit amet tellus cras
-                                adipiscing enim
-                              </p>
-                            </div>
-                          </div>
-                          <a class="review_reply link btn--underline" href="#"
-                            >Reply</a
-                          >
-                        </li>
-                        <li class="review">
-                          <div class="review_header d-sm-flex flex-wrap">
-                            <span class="name">Charles Sanchez</span>
-                            <div class="rating d-flex">
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star_fill star"></i>
-                              <i class="icon-star_fill star"></i>
-                            </div>
-                            <span class="timestamp"
-                              >October 1, 2021 at 11:52 am</span
-                            >
-                          </div>
-                          <p class="review_main">
-                            Aliquam sem fringilla ut morbi tincidunt augue.
-                          </p>
-                          <ul
-                            class="review_media d-flex flex-wrap justify-content-between justify-content-sm-start"
-                          >
-                            <li class="review_media-item">
-                              <a
-                                href="img/placeholder.jpg"
-                                data-caption="Image caption"
-                              >
-                                <picture>
-                                  <source
-                                    data-srcset="img/placeholder.jpg"
-                                    srcset="img/placeholder.jpg"
-                                    type="image/webp"
-                                  />
-                                  <img
-                                    class="gallery-img lazy"
-                                    data-src="img/placeholder.jpg"
-                                    src="img/placeholder.jpg"
-                                    alt="media"
-                                  />
-                                </picture>
-                              </a>
-                            </li>
-                            <li class="review_media-item">
-                              <a
-                                href="img/placeholder.jpg"
-                                data-caption="Image caption"
-                              >
-                                <picture>
-                                  <source
-                                    data-srcset="img/placeholder.jpg"
-                                    srcset="img/placeholder.jpg"
-                                    type="image/webp"
-                                  />
-                                  <img
-                                    class="gallery-img lazy"
-                                    data-src="img/placeholder.jpg"
-                                    src="img/placeholder.jpg"
-                                    alt="media"
-                                  />
-                                </picture>
-                              </a>
-                            </li>
-                          </ul>
-                          <a class="review_reply link btn--underline" href="#"
-                            >Reply</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="form-section">
-                      <h4 class="form-section_header">Add Review</h4>
-                      <form
-                        class="form-section_form form d-flex flex-column flex-lg-row flex-wrap justify-content-between"
-                        action="#"
-                        method="post"
-                        id="reviewForm"
-                        data-type="userComment"
-                      >
-                        <div class="field-wrapper">
-                          <label class="label" for="reviewName"
-                            >Your Name</label
-                          >
-                          <input
-                            class="field required"
-                            type="text"
-                            id="reviewName"
-                            placeholder="Your Name"
-                          />
-                        </div>
-                        <div class="field-wrapper">
-                          <label class="label" for="reviewEmail"
-                            >Your Email</label
-                          >
-                          <input
-                            class="field required"
-                            type="text"
-                            data-type="email"
-                            id="reviewEmail"
-                            placeholder="you@example.com"
-                          />
-                        </div>
-                        <div class="field-wrapper fluid">
-                          <label class="label" for="reviewContent"
-                            >Message</label
-                          >
-                          <textarea
-                            class="field field--message required"
-                            id="reviewContent"
-                            placeholder="Type Your Message"
-                          ></textarea>
-                        </div>
-                        <div
-                          class="form-section_footer d-flex flex-column flex-sm-row flex-wrap justify-content-between"
-                        >
-                          <div class="rating d-flex" data-type="changeable">
-                            <i class="icon-star_fill star"></i>
-                            <i class="icon-star_fill star"></i>
-                            <i class="icon-star_fill star"></i>
-                            <i class="icon-star_fill star"></i>
-                            <i class="icon-star_fill star"></i>
-                          </div>
-                          <div class="btn-wrapper btn-wrapper--underline">
-                            <a class="link btn--underline" href="#"
-                              >Add photos</a
-                            >
-                          </div>
-                          <div class="btn-wrapper">
-                            <button class="btn" type="submit">
-                              Leave a Reply
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrapper">
-                  <h4
-                    class="accordion_component-item_header d-flex justify-content-between align-items-center"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#additionalInfo"
-                  >
-                    Additional Information
-                    <i class="icon-caret_down icon"></i>
-                  </h4>
-                  <div
-                    class="tab-pane collapse"
-                    id="additionalInfo"
-                    role="tabpanel"
-                    aria-labelledby="additional-tab"
-                    data-bs-parent="#productTabs"
-                  >
-                    <table class="table d-flex flex-column">
-                      <tbody>
-                        <tr class="table_row d-flex flex-column flex-lg-row">
-                          <th class="table_row-header">Ingredients:</th>
-                          <td class="table_row-cell">
-                            Organic MCT Oil, CBD Isolate
-                          </td>
-                        </tr>
-                        <tr class="table_row d-flex flex-column flex-lg-row">
-                          <th class="table_row-header">Flavors:</th>
-                          <td class="table_row-cell">
-                            Natural 1500mg, Calm 750mg, Focus 750mg, Energize
-                            750mg, Sleep 750mg, Recover 750mg
-                          </td>
-                        </tr>
-                        <tr class="table_row d-flex flex-column flex-lg-row">
-                          <th class="table_row-header">Recommended Usage:</th>
-                          <td class="table_row-cell">
-                            Once a day, place a full dropper under your tongue
-                            and hold for a minute. Repeat as necessary
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+              <p
+                class="about_main-info_description"
+                id="product-description"
+              ></p>
             </div>
           </div>
         </div>
       </section>
-      <!-- Top products section start -->
-      <!-- <section class="top section">
-        <div class="container">
-          <h2 class="top_header">Top Sales Products</h2>
-          <ul class="top_list d-lg-flex flex-wrap">
-            <li class="top_list-item col-lg-6" data-order="1">
-              <div
-                class="top_list-item_wrapper d-flex flex-column flex-sm-row flex-lg-column flex-xxl-row"
-              >
-                <div class="media">
-                  <a
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                  >
-                    <picture>
-                      <source
-                        data-srcset="img/placeholder.jpg"
-                        srcset="img/placeholder.jpg"
-                        type="image/webp"
-                      />
-                      <img
-                        class="lazy"
-                        data-src="img/placeholder.jpg"
-                        src="img/placeholder.jpg"
-                        alt="media"
-                      />
-                    </picture>
-                  </a>
-                </div>
-                <div class="main d-md-flex flex-column">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                    >THC Full Spectrum: Natural</a
-                  >
-                  <ul class="main_table d-flex flex-column">
-                    <li class="list-item">
-                      <span class="property">THC</span>
-                      <span class="value">110.00-160.00%</span>
-                    </li>
-                    <li class="list-item">
-                      <span class="property">CBD</span>
-                      <span class="value">0.00-1.00mg/g</span>
-                    </li>
-                  </ul>
-                  <div class="main_price">
-                    <span class="price price--old">$45.99</span>
-                    <span class="price price--new">$36.87</span>
-                  </div>
-                  <div class="d-flex">
-                    <a class="btn" href="#">Add to Cart</a>
-                    <div class="action d-flex">
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-role="wishlist"
-                      >
-                        <i class="icon-heart"></i>
-                      </a>
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-trigger="view"
-                      >
-                        <i class="icon-eye"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="top_list-item col-lg-6" data-order="2">
-              <div
-                class="top_list-item_wrapper d-flex flex-column flex-sm-row flex-lg-column flex-xxl-row"
-              >
-                <div class="media">
-                  <a
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                  >
-                    <picture>
-                      <source
-                        data-srcset="img/placeholder.jpg"
-                        srcset="img/placeholder.jpg"
-                        type="image/webp"
-                      />
-                      <img
-                        class="lazy"
-                        data-src="img/placeholder.jpg"
-                        src="img/placeholder.jpg"
-                        alt="media"
-                      />
-                    </picture>
-                  </a>
-                </div>
-                <div class="main d-md-flex flex-column">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                    >Black Dog</a
-                  >
-                  <ul class="main_table d-flex flex-column">
-                    <li class="list-item">
-                      <span class="property">THC</span>
-                      <span class="value">110.00-160.00%</span>
-                    </li>
-                    <li class="list-item">
-                      <span class="property">CBD</span>
-                      <span class="value">0.00-1.00mg/g</span>
-                    </li>
-                  </ul>
-                  <div class="main_price">
-                    <span class="price price--old">$20.14</span>
-                    <span class="price price--new">$16.97</span>
-                  </div>
-                  <div class="d-flex">
-                    <a class="btn" href="#">Add to Cart</a>
-                    <div class="action d-flex">
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-role="wishlist"
-                      >
-                        <i class="icon-heart"></i>
-                      </a>
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-trigger="view"
-                      >
-                        <i class="icon-eye"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="top_list-item col-lg-6" data-order="3">
-              <div
-                class="top_list-item_wrapper d-flex flex-column flex-sm-row flex-lg-column flex-xxl-row"
-              >
-                <div class="media">
-                  <a
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                  >
-                    <picture>
-                      <source
-                        data-srcset="img/placeholder.jpg"
-                        srcset="img/placeholder.jpg"
-                        type="image/webp"
-                      />
-                      <img
-                        class="lazy"
-                        data-src="img/placeholder.jpg"
-                        src="img/placeholder.jpg"
-                        alt="media"
-                      />
-                    </picture>
-                  </a>
-                </div>
-                <div class="main d-md-flex flex-column">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                    >Boost THC Tincture – Indica</a
-                  >
-                  <ul class="main_table d-flex flex-column">
-                    <li class="list-item">
-                      <span class="property">THC</span>
-                      <span class="value">110.00-160.00%</span>
-                    </li>
-                    <li class="list-item">
-                      <span class="property">CBD</span>
-                      <span class="value">0.00-1.00mg/g</span>
-                    </li>
-                  </ul>
-                  <div class="main_price">
-                    <span class="price price--old">$43.55</span>
-                    <span class="price price--new">$26.98</span>
-                  </div>
-                  <div class="d-flex">
-                    <a class="btn" href="#">Add to Cart</a>
-                    <div class="action d-flex">
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-role="wishlist"
-                      >
-                        <i class="icon-heart"></i>
-                      </a>
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-trigger="view"
-                      >
-                        <i class="icon-eye"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="top_list-item col-lg-6" data-order="4">
-              <div
-                class="top_list-item_wrapper d-flex flex-column flex-sm-row flex-lg-column flex-xxl-row"
-              >
-                <div class="media">
-                  <a
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                  >
-                    <picture>
-                      <source
-                        data-srcset="img/placeholder.jpg"
-                        srcset="img/placeholder.jpg"
-                        type="image/webp"
-                      />
-                      <img
-                        class="lazy"
-                        data-src="img/placeholder.jpg"
-                        src="img/placeholder.jpg"
-                        alt="media"
-                      />
-                    </picture>
-                  </a>
-                </div>
-                <div class="main d-md-flex flex-column">
-                  <a
-                    class="main_title"
-                    href="product.html"
-                    target="_blank"
-                    rel="noopener norefferer"
-                    >Ace Of Spade</a
-                  >
-                  <ul class="main_table d-flex flex-column">
-                    <li class="list-item">
-                      <span class="property">THC</span>
-                      <span class="value">110.00-160.00%</span>
-                    </li>
-                    <li class="list-item">
-                      <span class="property">CBD</span>
-                      <span class="value">0.00-1.00mg/g</span>
-                    </li>
-                  </ul>
-                  <div class="main_price">
-                    <span class="price price--old">$19.97</span>
-                    <span class="price price--new">$13.22</span>
-                  </div>
-                  <div class="d-flex">
-                    <a class="btn" href="#">Add to Cart</a>
-                    <div class="action d-flex">
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-role="wishlist"
-                      >
-                        <i class="icon-heart"></i>
-                      </a>
-                      <a
-                        class="action_link d-flex align-items-center justify-content-center"
-                        href="#"
-                        data-trigger="view"
-                      >
-                        <i class="icon-eye"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section> -->
-      <!-- Top products section end -->
     </main>
     <!-- Single product content end -->
     <footer class="footer">
@@ -880,7 +202,7 @@
             class="footer_main-contacts footer_main-block col-md-6 col-xl-auto"
           >
             <h4 class="footer_main-contacts_header footer_main-header">
-              Contacts information
+              Контактная информация
             </h4>
             <ul class="footer_main-contacts_list">
               <li class="list-item d-flex align-items-center">
@@ -921,8 +243,8 @@
                   <i class="icon-clock"></i>
                 </span>
                 <div class="wrapper d-flex flex-column">
-                  <span>9:00 am to 5:00 pm</span>
-                  <span>Monday to Friday</span>
+                  <span>с 9:00 до 17:00</span>
+                  <span>с понедельника по пятницу</span>
                 </div>
               </li>
             </ul>
@@ -931,7 +253,7 @@
             class="footer_main-instagram footer_main-block col-md-6 col-xl-auto"
           >
             <h4 class="footer_main-instagram_header footer_main-header">
-              Instagram
+              Инстаграм
             </h4>
             <ul class="footer_main-instagram_list d-grid">
               <li class="list-item">
@@ -943,14 +265,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img1.jpg"
+                      srcset="img/img1.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img1.jpg"
+                      src="img/img1.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -965,14 +287,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img2.jpg"
+                      srcset="img/img2.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img2.jpg"
+                      src="img/img2.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -987,14 +309,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img3.jpg"
+                      srcset="img/img3.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img3.jpg"
+                      src="img/img3.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -1009,14 +331,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img4.jpg"
+                      srcset="img/img4.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img4.jpg"
+                      src="img/img4.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -1031,14 +353,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img5.jpg"
+                      srcset="img/img5.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img5.jpg"
+                      src="img/img5.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -1053,14 +375,14 @@
                 >
                   <picture>
                     <source
-                      data-srcset="img/placeholder.jpg"
-                      srcset="img/placeholder.jpg"
+                      data-srcset="img/img6.jpg"
+                      srcset="img/img6.jpg"
                       type="image/webp"
                     />
                     <img
                       class="lazy preview"
-                      data-src="img/placeholder.jpg"
-                      src="img/placeholder.jpg"
+                      data-src="img/img6.jpg"
+                      src="img/img6.jpg"
                       alt="instagram post"
                     />
                   </picture>
@@ -1082,6 +404,255 @@
         </div>
       </div>
     </footer>
+    <script>
+      const products = [
+        {
+          id: 1,
+          title: "Янтарная кислота",
+          description: `Янтарная кислота участвует в процессе усвоения клетками кислорода и обеспечения клеточного дыхания, транспорта микроэлементов, синтеза белка, производства новых клеток нервной и иммунной систем, способствует нормализации липидного профиля крови (снижению уровня холестерина), защите печени от перегрузки при утилизации различных токсических веществ, поступаемых с пищей, а также при приеме алкоголя✅ 💪<br><br>
+Комбинировать можно со следующими БАДами:<br>💊Овса комплекс<br>💊Гепа комплекс (артишок премиум)<br>💊 комплекс Фосфолипидов плюс<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Так же есть аптеки в которых имеется ассортимент наших витаминов:<br>
+✅г.Бишкек:<br>
+📍Ауэзова 6<br>
+📍Панфилова 153<br>
+✅г.Ош:<br>
+📍ул.Масалиева 76/1<br>
+📍ул.Курманжан-Датки 74<br>
+📍ул.Исанова 75B/5<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img1.jpg"],
+        },
+        {
+          id: 2,
+          title: "Фолиевая кислота",
+          description: `Фолиевая кислота (витамин В9) — незаменимый помощник для вашего здоровья! 💚 Она поддерживает нормальное деление клеток, что особенно важно во время беременности, помогая предотвратить дефекты нервной системы у малыша. 
+Также она улучшает работу нервов, поддерживает кроветворение и защищает сосуды от повреждений, снижая уровень гомоцистеина. 💪<br><br>
+Комбинировать можно со следующими БАДами:<br>💊Бета-аланин комплекс<br>💊Цимицифуга комплекс<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Так же есть аптеки в которых имеется ассортимент наших витаминов:<br>
+✅г.Бишкек:<br>
+📍Ауэзова 6<br>
+📍Панфилова 153<br>
+✅г.Ош:<br>
+📍ул.Масалиева 76/1<br>
+📍ул.Курманжан-Датки 74<br>
+📍ул.Исанова 75B/5<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img2.jpg"],
+        },
+        {
+          id: 3,
+          title: "Пиколинат хрома",
+          description: `Хром — жизненно важный микроэлемент, который является постоянной частью клеток всех органов и тканей. Он играет важную роль в обмене белков, жиров и углеводов✅<br><br>
+Хром участвует в регуляции работы сердечной мышцы и функционировании кровеносных сосудов. Он способствует снижению уровня холестерина в крови, а также выведению из организма токсинов🦠<br><br>
+Однако особая роль хрома пиколината состоит в регуляции углеводного обмена. Он необходим для правильного метаболизма глюкозы, обеспечивает нормальную активность инсулина. Хром способствует уменьшению аппетита, тем самым снижая тягу к сладкому🍰<br><br>
+Источниками хрома являются яблоки, устрицы, морские моллюски, отруби, говяжья печень, мясо птицы, перловая крупа, дрожжи, пиво, грейпфрутовый сок, пророщенная пшеница.💪<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊Цинк хелат<br>
+💊Селен<br>
+💊Хитозан<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Так же есть аптеки в которых имеется ассортимент наших витаминов:<br>
+✅г.Бишкек:<br>
+📍Ауэзова 6<br>
+📍Панфилова 153<br>
+✅г.Ош:<br>
+📍ул.Масалиева 76/1<br>
+📍ул.Курманжан-Датки 74<br>
+📍ул.Исанова 75B/5<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img3.jpg"],
+        },
+        {
+          id: 4,
+          title: "Куркума + имбирь",
+          description: `Корневище куркумы длинной содержит сложный комплекс биологически активных веществ, основными среди которых являются тумероны, куркумены и куркуминоиды
+Куркумин известен как сильный антиоксидант, обладающий противовоспалительным и антибактериальным действием. Он используется для поддержания работы желудочно-кишечного тракта, особенно при нарушениях функции печени, способствует защите клеток от воспаления и повреждения, вызванного воздействием различных токсинов, оказывает желчегонный эффект🔥<br><br>
+Главными компонентами имбиря настоящего считают эфирные масла и фенольные соединения, в частности гингеролы✅<br><br>
+С гингеролом связаны антиоксидантные, антибактериальные и противовоспалительные свойства растения. Он известен также как природный иммуномодулятор💊<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊Селен<br>
+💊Цинк хелат<br>
+💊Рейши комплекс<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img4.jpg"],
+        },
+        {
+          id: 5,
+          title: "Глюкозамин максимум",
+          description: `Глюкозамин представляет собой естественный компонент хрящевой ткани суставов. Он помогает поддерживать нормальное функционирование опорно-двигательного аппарата, активируя синтез ряда полисахаридов🧬<br><br>
+Например, хондроитинсульфат благотворно влияет на повышение устойчивости хряща к механическим воздействиям вследствие способности подавлять активность разрушающих ее ферментов. За счет нормализации обменных процессов и образования новых структурных компонентов в тканях этот биополимер содействует ускорению их восстановления✅<br><br>
+Крайне важным биоэлементом для белков соединительной ткани является сера в легко доступной для организма форме — в составе метилсульфонилметана (MSM). Это органическое вещество способствует формированию основных составляющих хрящевой ткани, тем самым сохраняя и поддерживая ее структуру.💊<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊Селен<br>
+💊Куркума-Имбирь<br>
+💊Рейши комплекс<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img5.jpg"],
+        },
+        {
+          id: 6,
+          title: "Глутаминовая кислота",
+          images: ["img/img6.jpg"],
+          description: `Глутаминовая кислота играет важную роль в метаболизме белков, углеводов, жиров и ряда других веществ организма, обеспечивая правильное протекание метаболических процессов в ЦНС✅<br><br>
+Глутаминовая кислота препятствует развитию гипоксии при повышенных физических нагрузках, а также накоплению молочной и пировиноградной кислот, вызывающих неприятные ощущения в мышцах после тренировок. Кроме того, глутаминовая кислота способствует поддержанию более высокого уровня гликогена (энергетического резерва) в организме, обеспечивая его энергией, в том числе во время занятий спортом💪🏻<br><br>
+Глутаминовая кислота способствует клеточному дыханию💯<br><br>
+Она играет ключевую роль в производстве энергии митохондриями как в период физической активности организма, так и в период его восстановления, обеспечивая нас энергией.<br><br>
+Также глутаминовая кислота поддерживает и повышает уровень активности ряда ферментов, необходимых для правильной работы клеток🧬<br><br>
+Кроме того, глутаминовая кислота является участником процессов защиты клеточных структур от повреждений при стрессе, способствует уменьшению количества аммиака, образующегося в организме в результате метаболизма (распада аминокислот, белков)♻️<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊L-Треонин<br>
+💊Магний L-треонат<br>`,
+        },
+        {
+          id: 7,
+          title: "Глюкозамин Хондрокомплекс",
+          description: `Глюкозамин играет в организме роль компонента, необходимого для построения и поддержания нормального состояния соединительной ткани💊<br><br>
+В ходе его метаболических превращений образуются такие соединения, как гиалуроновая кислота и хондроитин, ответственные за поддержание упругости хрящевой ткани и эластичности суставов, их устойчивости к механическим воздействиям и защиты от преждевременных разрушений🧬<br><br>
+Таким образом, нормализуя процессы обмена веществ в тканях, глюкозамин также способствует ускорению их восстановления💪🏻<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊Цинк Хелат<br>
+💊Остеонорм<br>
+💊Хондроитин Максимум<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img7.jpg"],
+        },
+        {
+          id: 8,
+          title: "Остеонорм",
+          description: `Глюкозамин и хондроитин являются естественными, взаимодополняющими друг друга компонентами для поддержания здоровья хрящевой ткани суставов🏃🏻‍♂️‍➡️
+Они способствуют защите хрящевой ткани от преждевременного разрушения за счет инактивации определенных ферментов🧬Глюкозамин стимулирует выработку определенных полисахаридов, которые являются основными строительными компонентами хрящевой ткани💪🏻<br><br>
+Хондроитинсульфат способствует поддержанию упругости хрящевой ткани и ее устойчивости к механическим воздействиям, что необходимо для поддержания ее нормальной работоспособности✅<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊Селен<br>
+💊Глюкозамин Хондрокомплекс<br>
+💊Гиалуроновая кислота<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img8.jpg"],
+        },
+        {
+          id: 9,
+          title: "Витамин D3 2000 диспергируемый",
+          description: `Витамин D3 2000 диспергируемый» — дополнительный источник витамина D3 в форме подъязычных таблеток, которые быстро растворяются и легко усваиваются организмом🫁<br><br>
+Одна из главных функций витамина D — обеспечение всасывания кальция и фосфора из пищи в кишечнике и регуляция их обмена♻️за счет чего осуществляется поддержание необходимых уровней этих двух макроэлементов в крови. Фосфор и кальций играют ключевую роль в поддержании физиологического состояния костей, зубов, а также в нормальном росте и развитии большинства тканей организма✅<br><br>
+Большое значение имеет витамин D для реализации нормального иммунного ответа🔅<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊Витамин К2<br>
+💊альция Глюконат<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img9.jpg"],
+        },
+        {
+          id: 10,
+          title: "Джимейт Лайф",
+          description: `Что входит в комплект системы измерения глюкозы в крови Джимейт Лайф?✅<br><br>
+🟢Глюкометр Джимейт Лайф<br>
+* результат за 5 секунд<br>
+* отсутствует кодировка<br>
+* память на 500 измерений<br>
+* пожизненная гарантия<br><br>
+🟢Тест-полоски Джимейт Лайф<br>
+* маленькая капля крови - 0,4 мкл<br>
+* автоматически втягивает кровь<br>
+* на результат измерения не влияет уровень кислорода в крови и атмосфере<br>
+* калиброван по плазме венозной крови<br><br>
+🟢Ланцеты Джимейт Лайф<br>
+* сделаны из высококачественной хирургической стали<br>
+* диаметр иглы составляет - 0,36 мм (28G)<br>
+* трехгранная заточка для безболезненного прокола<br><br>
+🟢Скарификатор Джимейт Лайф (устройство для прокалывания пальца)<br>
+* несколько позиций регулировки глубины прокола<br>
+* глубина может быть подобрана индивидуально в зависимости от типа кожи<br>
+* для прокола вставляются одноразовые ланцеты<br><br>
+🟢Чехол<br>
+Компактный и мягкий чехол для системы измерения и тест-<br>полосок. Удобный для носки с собой и не занимает много места.
+`,
+          images: ["img/img10.jpg"],
+        },
+      ];
+    </script>
+
+    <!-- main script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = Number(params.get("id"));
+        const product = products.find((p) => p.id === id);
+        const imagesWrapper = document.getElementById("product-images");
+
+        product.images.forEach((img) => {
+          const slide = document.createElement("div");
+          slide.classList.add("swiper-slide");
+          slide.innerHTML = `<img src="${img}" alt="${product.title}" />`;
+          imagesWrapper.appendChild(slide);
+        });
+        if (product) {
+          document.getElementById("product-title").textContent = product.title;
+          document.getElementById("product-description").innerHTML =
+            product.description;
+          document.getElementById(
+            "product-price"
+          ).textContent = `$${product.price}`;
+        } else {
+          document.getElementById("product-title").textContent =
+            "Продукт табылган жок!";
+        }
+      });
+    </script>
     <script src="js/common.min.js"></script>
     <div
       class="cartOffcanvas offcanvas offcanvas-end"

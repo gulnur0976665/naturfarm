@@ -502,6 +502,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 }
 .header_logo span:not(.logo) {
   display: none;
+  color: #378e3c;
 }
 .header_nav {
   width: 100%;
@@ -518,6 +519,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   left: 0;
   right: 0;
   background: #fff;
+  margin-top: 10px;
 }
 
 .header_nav.active {
@@ -705,9 +707,11 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 }
 .page_main {
   padding: 60px 0;
-  background: url(../img/placeholder.jpg) center/cover no-repeat;
+  background: linear-gradient(rgba(33, 72, 66, 0.333), rgba(33, 72, 66, 0.507)),
+    url(../img/main-logo21.jpg) center/cover no-repeat;
   text-align: center;
   margin-bottom: 30px;
+  color: #fff;
 }
 .page_header {
   margin-bottom: 15px;
@@ -715,6 +719,8 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .page_text {
   max-width: 500px;
   margin: 0 auto;
+  color: white;
+  font-weight: 600;
 }
 .page_breadcrumbs {
   position: relative;

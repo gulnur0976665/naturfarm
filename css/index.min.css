@@ -493,6 +493,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 }
 .header_logo span:not(.logo) {
   display: none;
+  color: #378e3c;
 }
 .header_nav {
   width: 100%;
@@ -527,6 +528,11 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .header_nav .nav-link1 {
   color: #fff;
 }
+@media screen and (max-width: 1200px) {
+  .header_nav .nav-link1 {
+    color: #214842;
+  }
+}
 @media screen and (min-width: 1199.98px) {
   .header_logo span:not(.logo) {
     display: inline;
@@ -539,6 +545,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
     align-items: center;
     gap: 78px;
     padding: 0;
+    margin-top: 10px;
   }
 
   .header_nav .nav-link {
@@ -561,6 +568,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 .header.scrolled .nav-link1 {
   color: #214842;
 }
+
 .header_nav .nav-link .icon {
   font-size: 14px;
   margin-left: 5px;
@@ -616,9 +624,6 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   .header.sticky {
     height: 90px;
   }
-  .header_user-search {
-    margin-right: 150px;
-  }
   .header_user-action:first-of-type {
     margin-right: 30px;
   }
@@ -647,6 +652,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   .header_nav-list_item .nav-link {
     margin-bottom: 0;
   }
+
   .header_nav .dropdown-menu {
     position: absolute;
     opacity: 0;
@@ -1002,37 +1008,39 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   margin-bottom: 0;
 }
 .products_list-item_wrapper {
-  -webkit-box-shadow: 0 0 15px rgba(37, 143, 103, 0.1);
-  box-shadow: 0 0 15px rgba(37, 143, 103, 0.1);
-  border-radius: 16px;
-  overflow: hidden;
-  height: 100%;
-  -webkit-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  background: #fff;
-}
-.products_list-item_wrapper:hover {
-  -webkit-box-shadow: 0 0 20px rgba(37, 143, 103, 0.15);
-  box-shadow: 0 0 20px rgba(37, 143, 103, 0.15);
+  height: 380px;
 }
 .products_list-item_wrapper .media {
-  margin-bottom: 10px;
-  overflow: hidden;
-  min-width: 100%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
 }
 .products_list-item_wrapper .media img {
-  position: relative;
-  max-height: 90%;
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.products_list-item_wrapper .media .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(33, 72, 66, 0.6);
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+.products_list-item_wrapper .media:hover .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.products_list-item_wrapper .media img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .products_list-item_wrapper .media .label {
   background: #258f67;
@@ -1045,28 +1053,6 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
   top: 0;
   left: 0;
   margin: 30px 0 0 30px;
-}
-.products_list-item_wrapper .media .overlay {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  padding: 30px;
-}
-.products_list-item_wrapper .media .overlay .action {
-  margin-left: auto;
-}
-.products_list-item_wrapper .media .overlay .action_link {
-  background: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid #efc368;
-  color: #efc368;
-  font-size: 19px;
 }
 .products_list-item_wrapper .media .overlay .action_link:first-of-type {
   margin-bottom: 20px;
@@ -1460,7 +1446,7 @@ span {
   }
 }
 .info {
-  background: url(../img/main-logo2.jpg) center, 0 0 / cover #214842;
+  background: url(../img/main-logo21.jpg) center, 0 0 / cover #214842;
   background-blend-mode: overlay;
   position: relative;
   overflow: hidden;
