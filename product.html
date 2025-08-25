@@ -13,52 +13,6 @@
     <link rel="stylesheet preload" as="style" href="css/libs.min.css" />
 
     <link rel="stylesheet" href="css/product.min.css" />
-
-    <script type="module">
-      import products from "./products.js";
-
-      const params = new URLSearchParams(window.location.search);
-      const id = Number(params.get("id"));
-      const product = products.find((p) => p.id === id);
-
-      if (product) {
-        document.getElementById("product-title").textContent = product.title;
-        document.getElementById("product-description").textContent =
-          product.description;
-        document.getElementById(
-          "product-price"
-        ).textContent = `$${product.price}`;
-        document.getElementById("product-category").textContent =
-          product.category;
-        document.getElementById("product-size").textContent = product.size;
-        document.getElementById("product-plant").textContent =
-          product.plantType;
-        document.getElementById("product-thc").textContent = product.thc;
-        document.getElementById("product-cbd").textContent = product.cbd;
-        document.getElementById("product-effects").textContent =
-          product.effects;
-        document.getElementById("product-tags").textContent = product.tags;
-        document.getElementById("product-sku").textContent = product.sku;
-
-        const imagesWrapper = document.getElementById("product-images");
-        const thumbsWrapper = document.getElementById("product-thumbs");
-
-        product.images.forEach((img) => {
-          const slide = document.createElement("div");
-          slide.classList.add("swiper-slide");
-          slide.innerHTML = `<img src="${img}" alt="${product.title}"/>`;
-          imagesWrapper.appendChild(slide);
-
-          const thumb = document.createElement("div");
-          thumb.classList.add("swiper-slide");
-          thumb.innerHTML = `<img src="${img}" alt="${product.title}"/>`;
-          thumbsWrapper.appendChild(thumb);
-        });
-      } else {
-        document.getElementById("product-title").textContent =
-          "Продукт табылган жок!";
-      }
-    </script>
   </head>
   <body>
     <header
@@ -101,11 +55,7 @@
     <header class="page">
       <div class="page_main container-fluid">
         <div class="container">
-          <h1 class="page_header">Single Product</h1>
-          <p class="page_text">
-            Nibh tellus molestie nunc non blandit. Mi tempus imperdiet nulla
-            malesuada pellentesque elit
-          </p>
+          <h1 class="page_header">Детальная страница</h1>
         </div>
       </div>
       <div class="container">
@@ -165,7 +115,7 @@
             >
               <span class="logo">
                 <img
-                  src="img/home-logo-removebg-preview.png"
+                  src="img/header1.png"
                   alt=""
                   style="width: 50px; height: auto"
                 />
@@ -259,7 +209,7 @@
               <li class="list-item">
                 <a
                   class="link"
-                  href="#"
+                  href="https://www.instagram.com/naturfarmkg/"
                   target="_blank"
                   rel="noopener norefferer"
                 >
@@ -281,7 +231,7 @@
               <li class="list-item">
                 <a
                   class="link"
-                  href="#"
+                  href="https://www.instagram.com/naturfarmkg/"
                   target="_blank"
                   rel="noopener norefferer"
                 >
@@ -303,7 +253,7 @@
               <li class="list-item">
                 <a
                   class="link"
-                  href="#"
+                  href="https://www.instagram.com/naturfarmkg/"
                   target="_blank"
                   rel="noopener norefferer"
                 >
@@ -325,7 +275,7 @@
               <li class="list-item">
                 <a
                   class="link"
-                  href="#"
+                  href="https://www.instagram.com/naturfarmkg/"
                   target="_blank"
                   rel="noopener norefferer"
                 >
@@ -347,7 +297,7 @@
               <li class="list-item">
                 <a
                   class="link"
-                  href="#"
+                  href="https://www.instagram.com/naturfarmkg/"
                   target="_blank"
                   rel="noopener norefferer"
                 >
@@ -369,7 +319,7 @@
               <li class="list-item">
                 <a
                   class="link"
-                  href="#"
+                  href="https://www.instagram.com/naturfarmkg/"
                   target="_blank"
                   rel="noopener norefferer"
                 >
@@ -622,6 +572,49 @@
 Компактный и мягкий чехол для системы измерения и тест-<br>полосок. Удобный для носки с собой и не занимает много места.
 `,
           images: ["img/img10.jpg"],
+        },
+        {
+          id: 11,
+          title: "АЦ-Цистеин",
+          description: `АЦ-Цистеин» — эффективное средство для разжижения мокроты и облегчения её выведения из дыхательных путей. Применяется при острых и хронических заболеваниях бронхолёгочной системы с образованием вязкого секрета🫁<br><br>
+Действующее вещество — ацетилцистеин, активно используется при бронхите, трахеите, ларингите и других воспалительных заболеваниях, способствует восстановлению проходимости дыхательных путей♻️<br><br>
+АЦ-Цистеин также помогает организму справляться с окислительным стрессом, поддерживая антиоксидантную защиту клеток и повышая иммунную устойчивость организма🔅<br><br>
+Комбинировать можно со следующими БАДами:<br>
+💊Цинк<br>
+💊Витамин С<br>
+💊Исландский мох<br><br>
+Все перечисленные БАДы есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img11.jpg"],
+        },
+        {
+          id: 12,
+          title: "Кук Ля Кук",
+          description: `Кук Ля Кук, Каламин детский лосьон для тела, 100 мл
+«Кук Ля Кук, Каламин» — мягкий и успокаивающий лосьон для ухода за чувствительной и раздражённой кожей малыша👶🏻
+Подходит для ежедневного использования с первых дней жизни. Идеален при покраснениях, укусах насекомых, опрелостях и других кожных раздражениях🧴<br><br>
+Основу средства составляет каламин — натуральный компонент, обладающий противовоспалительными, охлаждающими и подсушивающими свойствами♻️
+Лосьон снимает зуд, ускоряет восстановление кожи и предотвращает дальнейшее раздражение✅<br><br>
+Не содержит спирта, парабенов и отдушек — безопасен даже для самой нежной кожи💧<br><br>
+Комбинировать можно со следующими средствами ухода:<br>
+💊Д-Пантенол<br>
+💊Масло ши<br>
+💊Успокаивающий крем с ромашкой<br><br>
+Все перечисленные средства есть в наличии👇🏻<br>
+Наши филиалы:<br>
+📍Чынгыза Айтматова 40<br>
+📍Насирдина Исанова 42,1б<br>
+📍Касымалы Баялинова 91<br>
+📍Чынгыза Айтматова 4<br>
+Сеть аптек «Ева»✅<br>
+Натур-Фарм забота о вашем здоровье!💚`,
+          images: ["img/img12.jpg"],
         },
       ];
     </script>
