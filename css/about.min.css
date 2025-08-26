@@ -781,6 +781,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"]
 
 .page_header {
   margin-bottom: 15px;
+  color: rgb(255, 244, 90);
 }
 .page_text {
   max-width: 500px;
